@@ -22,7 +22,7 @@ typedef struct{
 typedef struct{
     int numero;
     int saldo;
-    Titular titular;
+    Titular *titular;
 } Conta;
 
 typedef struct{
@@ -56,7 +56,7 @@ typedef struct {
 Banco *bancoNovo();
 char* criarMenuBanco(Banco *banco);
 void InicializarBanco(Banco *banco);
-void CriarConta(Banco *banco, int *qtd_contas);
+void CriarConta(Conta *novaConta, Banco *banco, int qtd_contas);
 void TransacaoGlobal(Banco *banco, int qtd_contas, Extrato *novoExtrato);
 void ExcluirConta(Banco *banco, int num, int qtd_contas);
 char* criarMenuTransacao(Banco *banco);
