@@ -360,7 +360,7 @@ void AtualizarCadastro(Banco *banco, int num, int qtd_contas){
             while (opcao != 0){
 
                 if (opcao == 1) {
-                    printf("Nome Atual: %s\n", banco->contas[i].titular->nome);
+                    printf("Nome Atual: %c\n", banco->contas[i].titular->nome);
 
                     printf("Digite o novo nome: \n>> ");
                     scanf("%250[^\n]",&banco->contas[i].titular->nome);
@@ -382,7 +382,7 @@ void AtualizarCadastro(Banco *banco, int num, int qtd_contas){
                     MostrarTitular(banco, num, qtd_contas);
 
                     printf("Digite o novo nome: \n>> ");
-                    scanf("%250[^\n]",&banco->contas[i].titular->nome);
+                    scanf("%250[^\n]", banco->contas[i].titular->nome);
                     printf("Digite a nova idade: \n>> ");
                     scanf("%d",&banco->contas[i].titular->idade);
                     printf("Digite a nova renda: \n>> ");
@@ -415,16 +415,16 @@ void AtualizarEndTitular(Banco *banco, int num, int qtd_contas){
             while (opcao != 0){
 
                 if (opcao == 1) {
-                    printf("CEP Atual: %s\n", banco->contas[i].titular->enderecoTitular.cep);
+                    printf("CEP Atual: %c\n", banco->contas[i].titular->enderecoTitular.cep);
 
                     printf("Digite o novo CEP: \n>> ");
-                    scanf("%20[^\n]",&banco->contas[i].titular->enderecoTitular.cep);
+                    scanf("%20[^\n]", banco->contas[i].titular->enderecoTitular.cep);
 
                 } else if (opcao == 2) {
-                    printf("Logradouro Atual: %s\n", banco->contas[i].titular->enderecoTitular.logradouro);
+                    printf("Logradouro Atual: %c\n", banco->contas[i].titular->enderecoTitular.logradouro);
 
                     printf("Digite o novo logradouro: \n>> ");
-                    scanf("%250[^\n]",&banco->contas[i].titular->enderecoTitular.logradouro);
+                    scanf("%250[^\n]", banco->contas[i].titular->enderecoTitular.logradouro);
 
                 }else if (opcao == 3) {
                     printf("Numero Atual: %d\n", banco->contas[i].titular->enderecoTitular.numero);
@@ -433,32 +433,32 @@ void AtualizarEndTitular(Banco *banco, int num, int qtd_contas){
                     scanf("%d",&banco->contas[i].titular->enderecoTitular.numero);
 
                 }else if (opcao == 4) {
-                    printf("Cidade Atual: %s\n", banco->contas[i].titular->enderecoTitular.cidade);
+                    printf("Cidade Atual: %c\n", banco->contas[i].titular->enderecoTitular.cidade);
 
                     printf("Digite a nova cidade: \n>> ");
-                    scanf("%100[^\n]",&banco->contas[i].titular->enderecoTitular.cidade);
+                    scanf("%100[^\n]", banco->contas[i].titular->enderecoTitular.cidade);
 
 
                 }else if (opcao == 5) {
-                    printf("UF Atual: %s\n", banco->contas[i].titular->enderecoTitular.uf);
+                    printf("UF Atual: %c\n", banco->contas[i].titular->enderecoTitular.uf);
 
                     printf("Digite a nova UF: \n>> ");
-                    scanf("%10[^\n]",&banco->contas[i].titular->enderecoTitular.uf);
+                    scanf("%10[^\n]", banco->contas[i].titular->enderecoTitular.uf);
 
                 }else if (opcao == 6) {
                     printf("------------ Dados do Atuais -----------\n");
                     MostrarEndTitular(banco, num, qtd_contas);
 
                     printf("Digite o novo CEP: \n>> ");
-                    scanf("%s",&banco->contas[i].titular->enderecoTitular.cep);
+                    scanf("%10[^\n]", banco->contas[i].titular->enderecoTitular.cep);
                     printf("Digite o novo logradouro: \n>> ");
-                    scanf("%250[^\n]",&banco->contas[i].titular->enderecoTitular.logradouro);
+                    scanf("%250[^\n]", banco->contas[i].titular->enderecoTitular.logradouro);
                     printf("Digite o novo numero: \n>> ");
                     scanf("%d",&banco->contas[i].titular->enderecoTitular.numero);
                     printf("Digite a nova cidade: \n>> ");
-                    scanf("%100[^\n]",&banco->contas[i].titular->enderecoTitular.cidade);
+                    scanf("%100[^\n]", banco->contas[i].titular->enderecoTitular.cidade);
                     printf("Digite a nova UF: \n>> ");
-                    scanf("%10[^\n]",&banco->contas[i].titular->enderecoTitular.uf);
+                    scanf("%10[^\n]", banco->contas[i].titular->enderecoTitular.uf);
 
                 }
                 else {
@@ -486,7 +486,7 @@ void MostrarConta(Banco *banco, int qtd_contas){
 
         for(int i = 0; i < qtd_contas; i++){
             printf("| Numero da Conta: %d\n", banco->contas[i].numero);
-            printf("| Nome: %s  CPF: %d\n", banco->contas[i].titular->nome, banco->contas[i].titular->cpf);
+            printf("| Nome: %c  CPF: %d\n", banco->contas[i].titular->nome, banco->contas[i].titular->cpf);
             printf("| Saldo: R$%d,00\n", banco->contas[i].saldo); 
             printf("-----------------------------------------\n");
         }
@@ -502,7 +502,7 @@ void MostrarTitular(Banco *banco, int num, int qtd_contas){
     for(int i = 0; i < qtd_contas; i++){
         if(num == banco->contas[i].titular->cpf){
             printf("| CPF: %d  Idade: %d\n", banco->contas[i].titular->cpf, banco->contas[i].titular->idade);
-            printf("| Nome: %s\n", banco->contas[i].titular->nome);
+            printf("| Nome: %c\n", banco->contas[i].titular->nome);
             printf("| Renda: R$%d,00\n", banco->contas[i].titular->renda); 
             printf("-----------------------------------------\n");
 
@@ -520,11 +520,11 @@ void MostrarEndTitular(Banco *banco, int num, int qtd_contas) {
 
     for (int i = 0; i < qtd_contas; i++) {
         if (num == banco->contas[i].titular->cpf) {
-            printf("| Cep: %s  Numero: %d\n", 
+            printf("| Cep: %c  Numero: %d\n", 
                    banco->contas[i].titular->enderecoTitular.cep, banco->contas[i].titular->enderecoTitular.numero); 
-            printf("| Logradouro: %s\n", 
+            printf("| Logradouro: %c\n", 
                    banco->contas[i].titular->enderecoTitular.logradouro); 
-            printf("| Cidade: %s  UF: %s\n", 
+            printf("| Cidade: %c  UF: %s\n", 
                    banco->contas[i].titular->enderecoTitular.cidade, banco->contas[i].titular->enderecoTitular.uf);
             printf("-----------------------------------------\n");
         } else {
